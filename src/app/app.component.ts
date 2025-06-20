@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
-import { ProductDetailsComponent } from './features/product-details/product-details.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -29,7 +27,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 2500);
-    console.log(this.cartItemCount); 
+    console.log(this.cartItemCount);
   }
 
 

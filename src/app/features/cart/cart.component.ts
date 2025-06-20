@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cart } from '../../models/product';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { SweetalertService } from '../../core/services/sweetalert.service';
 import { CartServiceService } from '../../core/services/cart-service.service';

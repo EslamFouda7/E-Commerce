@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CartServiceService } from '../../../core/services/cart-service.service';

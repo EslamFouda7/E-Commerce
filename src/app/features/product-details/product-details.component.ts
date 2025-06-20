@@ -1,15 +1,12 @@
 import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
-  Inject,
-  inject,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { ProductService } from '../../core/services/product.service';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { BtnComponent } from '../../shared/btn/btn.component';
 import { FormsModule } from '@angular/forms';
 

@@ -1,6 +1,6 @@
 import {
   Component,
-  Inject,
+
   Input,
   OnChanges,
   OnInit,
@@ -11,7 +11,6 @@ import { Product } from '../../../models/product';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterLink, RouterModule } from '@angular/router';
-import { BtnComponent } from '../../btn/btn.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
