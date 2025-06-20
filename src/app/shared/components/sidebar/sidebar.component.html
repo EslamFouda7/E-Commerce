@@ -1,0 +1,184 @@
+<!-- السهم الجانبي -->
+<div class="sidebar-toggle" (click)="toggleSidebar()" [class.d-md-none]="true">
+  <i class="fa" [class.fa-chevron-right]="!isSidebarVisible" [class.fa-chevron-left]="isSidebarVisible"></i>
+</div>
+<!-- السايد بار -->
+<div class="sidebar-container"  [class.d-block]="isSidebarVisible" [class.d-md-block]="true">
+  <div class="sidebar-content">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'all'" (click)="setActive('all')">
+            All
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'mens-shirts'"
+            (click)="setActive('mens-shirts')">
+            <img src="menshirt.png" alt="" width="40px">
+            Mens shirts
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'mens-shoes'"
+            (click)="setActive('mens-shoes')">
+            <img src="menshoe_icon.png" alt="" width="40px">
+            Mens shoes
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'mens-watches'"
+            (click)="setActive('mens-watches')">
+            <img src="clock-watch-icon--11.png" alt="" width="40px">
+            Mens watches
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'womens-dresses'"
+            (click)="setActive('womens-dresses')">
+            <img src="dresses.webp" alt="" width="40px">
+            Womens dresses
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'womens-bags'"
+            (click)="setActive('womens-bags')">
+            <img src="bag.png" alt="" width="40px">
+            Womens bags
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'womens-jewellery'"
+            (click)="setActive('womens-jewellery')">
+            <img src="-jewellery.webp" alt="" width="40px">
+            Womens jewellery
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'womens-shoes'"
+            (click)="setActive('womens-shoes')">
+            <img src="shoe-icon-woman.png" alt="" width="40px">
+            Womens shoes
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'womens-watches'"
+            (click)="setActive('womens-watches')">
+            <img src="women-watch.webp" alt="" width="40px">
+            Womens watches
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'tops'" (click)="setActive('tops')">
+            <img src="cloth__top.webp" alt="" width="40px">
+            Tops
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'beauty'" (click)="setActive('beauty')">
+            <img src="Beauty.png" alt="" width="40px">
+            Beauty
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'skin-care'" (click)="setActive('skin-care')">
+            <img src=" Skincare.png" alt="" width="40px">
+            Skin care
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'fragrances'"
+            (click)="setActive('fragrances')">
+            <img src="fragrances.png" alt="" width="40px">
+            Fragrances
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'sunglasses'"
+            (click)="setActive('sunglasses')">
+            <img src="sunglass.png" alt="" width="40px">
+            Sunglasses
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'furniture'" (click)="setActive('furniture')">
+            <img src="Furniture.png" alt="" width="40px">
+            Furniture
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'home-decoration'"
+            (click)="setActive('home-decoration')">
+            <img src="Home-decoration.png" alt="" width="40px">
+            Home decoration
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'kitchen-accessories'"
+            (click)="setActive('kitchen-accessories')">
+            <img src="Kitchen-accessories.png" alt="" width="40px">
+            Kitchen accessories
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'groceries'" (click)="setActive('groceries')">
+            <img src="groceries.png" alt="" width="40px">
+            Groceries
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'laptops'" (click)="setActive('laptops')">
+            <img src="laptop-icon-29.png" alt="" width="40px">
+            Laptops
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'smartphones'"
+            (click)="setActive('smartphones')">
+            <img src="Smartphones.webp" alt="" width="40px">
+            Smart phones
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'tablets'" (click)="setActive('tablets')">
+            <img src="Tablets.png" alt="" width="40px">
+            Tablets
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'mobile-accessories'"
+            (click)="setActive('mobile-accessories')">
+            <img src="Mobileaccessories.png" alt="" width="40px">
+            Mobile accessories
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'vehicle'" (click)="setActive('vehicle')">
+            <img src="Vehicle.png" alt="" width="40px">
+            Vehicle
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" [class.active]="activeCategory === 'motorcycle'"
+            (click)="setActive('motorcycle')">
+            <img src="Motorcycle.png" alt="" width="40px">
+            Motorcycle
+          </a>
+        </li>
+      </ul>
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- طبقة التعتيم -->
+<div class="sidebar-backdrop"
+     *ngIf="isSidebarVisible"
+     (click)="toggleSidebar()"
+     [class.d-md-none]="true"></div>

@@ -1,0 +1,67 @@
+<section class="cart mt-5">
+  <div class="container cart--content">
+    <div class="row cart--content--head">
+      <div class="col-md-6 col-6">
+        <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
+      </div>
+      <div class="col-md-6 col-6 d-flex justify-content-end">
+        <img src="shoply_logo_transparent.png" alt="" width="150px">
+      </div>
+    </div>
+    <hr>
+    <div class="row text-center" *ngIf="isEmpty">
+      <h3 class="mb-3">Your cart is empty</h3>
+      <p>Looks like you haven't added any items to your cart yet</p>
+      <div class="row d-flex justify-content-center">
+        <a routerLink="/" class="btn btn-Continue">Continue Shopping</a>
+      </div>
+    </div>
+
+    <div *ngIf="!isEmpty">
+      <div class="row" *ngFor="let product of cart?.products; let i = index">
+        <div class="col-md-4 text-center">
+          <a [routerLink]="['/ProductDetails', product.id]"><img [src]="product.thumbnail" alt="" width="200px"></a>
+        </div>
+        <div class="col-md-8">
+          <div class="row mb-3">
+            <a [routerLink]="['/ProductDetails', product.id]">
+              <h3>{{product.title}}</h3>
+            </a>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-6 col-6">
+              <span class="fw-bold text-decoration-line-through text-muted">${{product.price}}</span>
+            </div>
+            <div class="col-md-6 col-6">
+              <span class="fw-bold text-danger">-{{product.discountPercentage}} %</span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-10">
+              <span class="fw-bold text-success">${{getDiscountedPrice(product.price,product.discountPercentage)|
+                number:'1.2-2'}}</span>
+              <p>quantity: {{product.quantity}}</p>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-remove btn-sm" (click)="removeProduct(i)">
+                <i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <!--subTotal-->
+      <div class="row" *ngIf="cart">
+        <div class="col-md-6">
+          <h5>Subtotal ({{cart.totalQuantity}} items) : <span
+              class="fw-bold text-success">${{cart.discountedTotal | number:'1.2-2'}}</span>
+          </h5>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <a class="btn">Proceed to Buy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

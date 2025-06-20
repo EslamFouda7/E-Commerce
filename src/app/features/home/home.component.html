@@ -1,0 +1,15 @@
+<section class="overflow-hidden">
+<div class="row">
+  <app-carousel></app-carousel>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <app-product-card [searchValue]="searchTerm" [category]="selectedCategory"></app-product-card>
+  </div>
+  <div class="col-md-3">
+    <app-sidebar (categorySelected)="onCategorySelected($event)"></app-sidebar>
+  </div>
+</div>
+</section>
+
+

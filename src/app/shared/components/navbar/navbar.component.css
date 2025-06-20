@@ -1,0 +1,14 @@
+.nav-item a{
+  font-weight: 700;
+  color: #464646;
+  transition: .5s ease;
+  font-size:18px;
+}
+.nav-item a:hover{
+  color: #003a62;
+}
+
+
+.badge{
+  background-color: #003a62;
+}

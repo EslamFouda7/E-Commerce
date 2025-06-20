@@ -1,0 +1,110 @@
+<section class="ProductDetails mt-5">
+  <div class="container">
+    <!--content-->
+    <div class="row" *ngIf="product">
+      <div class="col-lg-4 text-center">
+        <img [src]="product.thumbnail" alt="{{ product.title }}" />
+      </div>
+      <div class="col-lg-5">
+        <h6 *ngIf="product.brand"><img src="Verified.png" alt="" width="20px"><span
+            class="ms-2">{{product.brand}}</span></h6>
+        <h2>{{product.title}}</h2>
+        <p>{{ product.description }}</p>
+        <div class="rating d-flex align-items-center mb-4" [attr.data-rating]="product.rating">
+          <ng-container *ngFor="let star of starsArray; let i = index">
+            <img *ngIf="i < fullStars" src="star-fill.png" alt="Full Star" width="20px" />
+            <img *ngIf="i >= fullStars && i < fullStars + hasHalfStar" src="star-half-fill.png" alt="Half Star"
+              width="20px" />
+          </ng-container>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-6 col-sm-6">
+            <span class="fw-bold text-decoration-line-through text-muted">${{ product.price }}</span>
+          </div>
+          <div class="col-md-6 col-6 col-sm-6">
+            <span class="text-danger fw-bold" *ngIf="product.discountPercentage > 0">
+              -{{ product.discountPercentage }}%
+            </span>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <span class="fw-bold text-success">${{getDiscountedPrice(product.price,product.discountPercentage)|
+              number:'1.2-2'}}</span>
+          </div>
+        </div>
+        <!--QR-->
+        <div class="row QR mb-4">
+          <p>barcode: {{product.meta.barcode}}</p>
+          <img [src]="product.meta.qrCode" alt="" width="100px">
+        </div>
+      </div>
+      <!--info about product-->
+      <div class="col-lg-3 stock">
+        <div class="row text-center">
+          <div class="col-md-6 col-6 col-sm-6">
+            <span class="fw-bold text-decoration-line-through text-muted">${{ product.price }}</span>
+          </div>
+          <div class="col-md-6 col-6 col-sm-6">
+            <span class="text-danger fw-bold" *ngIf="product.discountPercentage > 0">
+              -{{ product.discountPercentage }}%
+            </span>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <span class="fw-bold text-success">${{getDiscountedPrice(product.price,product.discountPercentage)|
+              number:'1.2-2'}}</span>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-4 text-muted">
+          <p><i class="fa-solid fa-award"></i> {{product.warrantyInformation}}</p>
+          <p><i class="fa-regular fa-clock"></i> {{product.shippingInformation}}</p>
+          <p><i class="fa-solid fa-rotate-left"></i> {{product.returnPolicy}}</p>
+          <p class="fw-bold text-success">{{ product.availabilityStatus }}</p>
+          <p>weight: {{product.weight}}</p>
+          <p>stock quantity: {{product.stock}}</p>
+        </div>
+
+        <hr>
+
+        <div class="row mt-4">
+          <select class="form-select" name="quantity" id="" *ngIf="product.minimumOrderQuantity" [(ngModel)]="quantity">
+            <option value="" *ngFor="let quantity of getQuantityOptions()" [value]="quantity">{{quantity}}</option>
+          </select>
+        </div>
+        <div class="row mt-4">
+          <app-btn [product]="{id:product.id,quantity:quantity}"></app-btn>
+        </div>
+      </div>
+    </div>
+
+    <!-- imgs of product--footer -->
+    <div class="row mt-5">
+      <div class="col-lg-9">
+        <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true"
+          autoplay-delay="1000">
+          <swiper-slide *ngFor="let img of product?.images">
+            <img [src]="img" alt="">
+          </swiper-slide>
+        </swiper-container>
+      </div>
+      <div class="col-lg-3 Reviews">
+        <h4 class="text-center mb-4">Customer Reviews</h4>
+        <div *ngFor="let review of product?.reviews">
+          <p class="fw-bold text-muted"><i class="fa-regular fa-user me-2"></i>{{review.reviewerName}}</p>
+          <p class="fw-bold">{{review.rating}} ⭐</p>
+          <p class="fw-bold">{{review.comment}}</p>
+          <p class="text-muted">{{review.date}}</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>

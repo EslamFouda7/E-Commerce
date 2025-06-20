@@ -1,0 +1,124 @@
+.fa-shirt{
+  font-size: 30px;
+}
+a{
+  color: #000;
+}
+.nav-link.active{
+  background-color: #003a62;
+}
+/* أنماط السهم الجانبي */
+.sidebar-toggle {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #003a62;
+  color: white;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  z-index: 1050;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.sidebar-toggle:hover {
+  background: #003a62;
+  width: 35px;
+}
+
+/* أنماط السايد بار */
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: #f8f9fa;
+  z-index: 1040;
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto; /* إضافة scroll عند الحاجة */
+}
+
+.sidebar-container:not(.d-block) {
+  transform: translateX(-100%);
+}
+
+.sidebar-container.d-block {
+  transform: translateX(0);
+}
+
+/* محتوى السايد بار */
+.sidebar-content {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* طبقة التعتيم */
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1030;
+}
+
+/* للشاشات الكبيرة */
+@media (min-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+
+  .sidebar-container {
+    position: static;
+    transform: none !important;
+    height: auto;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+/* تحسينات العناصر الداخلية */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+  color: #000;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+}
+
+.nav-link.active {
+  background-color: #003a62;
+  color: white;
+}
+
+.nav-link img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fa-shirt {
+  font-size: 30px;
+}

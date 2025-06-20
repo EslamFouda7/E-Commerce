@@ -1,0 +1,38 @@
+h2 {
+  color: #003a62;
+  margin-top: 12px;
+}
+.cart--content {
+  padding: 30px;
+  background-color: #afafaf25;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.btn{
+  border: 1px solid #003a62;
+  transition: 0.5s ease;
+  background-color: #003a62;
+  color: white;
+}
+.btn-Continue{
+  width: 200px;
+}
+.btn-remove{
+  background-color: rgb(214, 0, 0);
+  border: none;
+}
+.btn:hover {
+  background-color: white;
+  color: #000;
+}
+@media (max-width: 567px) {
+  h2 {
+    font-size: 18px;
+
+  }
+  .cart--content--head img {
+    width: 100px;
+  }
+}

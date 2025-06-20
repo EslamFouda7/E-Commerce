@@ -1,0 +1,46 @@
+<section class="product">
+  <div class="container">
+    <div class="row justify-content-center mt-4">
+      <form class="d-flex col-md-6" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+          [(ngModel)]="searchValue" name="search" />
+        <button class="btn" type="button" (click)="SearchProd()">Search</button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center"
+        *ngFor="let prod of product | paginate: { itemsPerPage: 21, currentPage: page }">
+        <div class="card mt-5" style="width: 18rem;">
+          <a [routerLink]="['/ProductDetails', prod.id]" class="card-body--head">
+            <img [src]="prod.thumbnail" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{prod.title}}</h5>
+              <p class="text-muted">
+                {{ prod.description | slice:0:50 }}...
+              </p>
+              <div class="row text-center">
+                <div class="col-md-6 col-6 col-sm-6">
+                  <span class="fw-bold text-decoration-line-through text-muted">${{ prod.price }}</span>
+                </div>
+                <div class="col-md-6 col-6 col-sm-6">
+                  <span class="text-danger fw-bold" *ngIf="prod.discountPercentage > 0">
+                    -{{ prod.discountPercentage }}%
+                  </span>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-md-12">
+                  <span class="fw-bold text-success">${{getDiscountedPrice(prod.price,prod.discountPercentage)|
+                    number:'1.2-2'}}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 d-flex justify-content-center">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+</section>

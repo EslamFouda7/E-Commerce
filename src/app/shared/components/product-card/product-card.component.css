@@ -1,0 +1,31 @@
+
+.card-body {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-body--head{
+  text-decoration: none;
+  color: #000;
+}
+.btn{
+  border:1px solid #003a62;
+  transition: .5s ease;
+  background-color:#003a62;
+  color: white;
+}
+.btn:hover{
+  background-color: white;
+  color: #000;
+}
+::ng-deep .ngx-pagination .current {
+    border-radius: 18px !important;
+    background: #003a62 !important;
+}
+::ng-deep .ngx-pagination .current:hover {
+  border-radius: 18px !important;
+}
+::ng-deep .ngx-pagination a{
+  text-decoration: none;
+}
